@@ -92,6 +92,9 @@ WORKDIR /home/${USERNAME}
 #  && make -C edk2/BaseTools/Source/C
 #  && rm -rf edk2
 
+# copy modified bashrc
+COPY --chown=${USERNAME}:${USERNAME} ./bashrc /home/${USERNAME}/.bashrc
+
 # clone mikanos devenv
 RUN git clone https://github.com/uchan-nos/mikanos-build.git osbook
 
