@@ -6,9 +6,9 @@ ARG USERNAME=vscode
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
     build-essential \
-    llvm-7-dev \
-    lld-7 \
-    clang-7 \
+    llvm-9-dev \
+    lld-9 \
+    clang-9 \
     nasm \
     acpica-tools \
     uuid-dev \
@@ -79,7 +79,7 @@ RUN for item in \
         clang++ \
         clang-cpp \
     ; do \
-        update-alternatives --install "/usr/bin/${item}" "${item}" "/usr/bin/${item}-7" 50 \
+        update-alternatives --install "/usr/bin/${item}" "${item}" "/usr/bin/${item}-9" 50 \
     ; done
 
 # switch to unprivileged
